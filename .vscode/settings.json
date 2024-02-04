@@ -1,0 +1,21 @@
+{
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "array": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "utility": "cpp",
+    "cstring": "cpp",
+    "typeinfo": "cpp",
+    "*.tcc": "cpp",
+    "random": "cpp",
+    "functional": "cpp",
+    "system_error": "cpp"
+  }
+}
