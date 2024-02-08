@@ -2,6 +2,7 @@
 #define WIFI_CONNECTION_H
 
 #include <WiFi.h>
+#include <WiFiMulti.h>
 #include <WString.h>
 #include <HardwareSerial.h>
 

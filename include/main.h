@@ -43,6 +43,7 @@ enum WiFiState
 enum Screen
 {
     CLOCK = 0,
+    PICTURE,
     WEATHER,
     GIFS,
     RESET,
@@ -79,6 +80,7 @@ void settings();
 void displayClock();
 void displayWeather();
 void displayGifs();
+void displayPicture();
 void setTimeout(unsigned long timeout);
 void getWeather();
 char *mapIconCode(const char *code);
@@ -223,16 +225,16 @@ const char index_html[] PROGMEM = R"rawliteral(
                 <form action="/" method="POST">
                     <p>
                         <label for="ssid">WiFi SSID</label>
-                        <input type="text" id="ssid" name="ssid" value="P5"><br>
+                        <input type="text" id="ssid" name="ssid" value="TUNG"><br>
 
                         <label for="pass">WiFi Password</label>
-                        <input type="text" id="pass" name="pass" value="anhthien85"><br>
+                        <input type="text" id="pass" name="pass" value="0935402561"><br>
 
                         <label for="lat">Latitude</label>
-                        <input type="text" id="lat" name="lat" value="10.762622"><br>
+                        <input type="text" id="lat" name="lat" value="13.856534"><br>
 
                         <label for="lon">Longtitude</label>
-                        <input type="text" id="lon" name="lon" value="106.660172"><br>
+                        <input type="text" id="lon" name="lon" value="109.167479"><br>
                         
                         <input type="submit" value="Submit">
                     </p>

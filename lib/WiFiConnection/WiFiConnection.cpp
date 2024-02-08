@@ -21,7 +21,7 @@ void WiFiConnection::connect()
 {
     WiFi.mode(this->mode);
     WiFi.begin(this->ssid, this->password);
-    Serial.print("Connecting to WiFi");
+    Serial.print("Connecting to WiFi: ");
     Serial.println(ssid);
     led.clearScreen();
     led.drawTextWrap(0, 0, "Connecting to WiFi", "#0000ff", 1);
@@ -44,6 +44,8 @@ void WiFiConnection::connect()
     }
     Serial.print("Connected to WiFi: ");
     Serial.println(WiFi.localIP());
+    led.clearScreen();
+    led.drawTextWrap(0, 0, "Connected to WiFi", "#0000ff", 1);
 }
 
 void WiFiConnection::disconnect()
@@ -68,7 +70,7 @@ void WiFiConnection ::accessPoint(const char *ssid, const char *password)
     led.drawTextWrap(0, 0, "Access point started", "#0000ff", 1);
     delay(2000);
     led.clearScreen();
-    led.drawTextWrap(0, 0, "IP Address: ", "#0000ff", 1);
+    led.drawTextWrap(0, 0, "IP Addr: ", "#0000ff", 1);
     led.drawTextWrap(0, 16, WiFi.softAPIP().toString().c_str(), "#0000ff", 1);
     delay(5000);
 }

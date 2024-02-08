@@ -25,7 +25,7 @@ void setup()
   SPIFFS.begin();
   // Hello World
   dmMatrix.clearScreen();
-  dmMatrix.drawGif("/gifs/loading.io-64x32px.gif");
+  dmMatrix.drawGif("/store/loading.io-64x32px.gif");
   // Setup Wifi
   String settingsDocStr = fileSytem.readFile(SETTINGS_FILE);
   JsonDocument wifiDoc;
@@ -61,12 +61,20 @@ void loop()
     screen++;
     screen_get_last_time = millis();
     dmMatrix.clearScreen();
+
+    if (screen_get_last_time > 60000 && wifiState == WiFiState::WIFI_DISCONNECTED)
+    {
+      ESP.restart();
+    }
   }
 
   switch (screen)
   {
   case Screen::CLOCK:
     displayClock();
+    break;
+  case Screen::PICTURE:
+    displayPicture();
     break;
   case Screen::WEATHER:
     displayWeather();
@@ -152,6 +160,22 @@ void displayWeather()
 void displayGifs()
 {
   dmMatrix.drawGifs(gifDir);
+}
+
+void displayPicture()
+{
+  int count = 0;
+  while (count < 5)
+  {
+    dmMatrix.drawGif("/picture/phaohoa2.gif");
+    count++;
+  }
+  count = 0;
+  while (count < 5)
+  {
+    dmMatrix.drawGif("/picture/phaohoa3.gif");
+    count++;
+  }
 }
 
 void getWeather()

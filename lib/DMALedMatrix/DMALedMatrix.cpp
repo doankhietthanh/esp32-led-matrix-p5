@@ -204,12 +204,12 @@ void DMALedMatrix::drawGifs(String gifDir)
                 ShowGIF(filePath);
             }
             gifFile.close();
+            clearScreen();
+            delay(500);
             gifFile = root.openNextFile();
         }
         root.close();
     } // root
-
-    delay(1000); // pause before restarting
 }
 
 void DMALedMatrix::drawGif(char *filename)
