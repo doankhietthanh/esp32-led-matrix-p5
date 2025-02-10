@@ -167,13 +167,19 @@ void displayPicture()
   int count = 0;
   while (count < 5)
   {
-    dmMatrix.drawGif("/picture/phaohoa2.gif");
+    dmMatrix.drawGif("/picture/phaohoa_1.gif");
     count++;
   }
   count = 0;
   while (count < 5)
   {
-    dmMatrix.drawGif("/picture/phaohoa3.gif");
+    dmMatrix.drawGif("/picture/phaohoa_2.gif");
+    count++;
+  }
+  count = 0;
+  while (count < 5)
+  {
+    dmMatrix.drawGif("/picture/phaohoa_3.gif");
     count++;
   }
 }
